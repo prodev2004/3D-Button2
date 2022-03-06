@@ -1,0 +1,63 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body {
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    background-color: #161616;
+}
+
+.container {
+    perspective: 500px;
+}
+button {
+    background-color: transparent;
+    outline: none;
+    border: none;
+    position: relative;
+    transform-style: preserve-3d;
+    cursor: pointer;
+}
+.top {
+    font-size: 1.2rem;
+    padding: 1rem 2rem;
+    background-color: #ff0000;
+    color: #fff;
+    transform: rotateX(60deg) rotate(20deg);
+    transition: 100ms ease-in-out transform;
+}
+.left {
+    position: absolute;
+    left: 0;
+    width: 98.5%;
+    height: 15px;
+    background-color: #ff4040;
+    transform: skewY(11deg) translate(-7px, -13.7px);
+    transform-origin: bottom;
+    transition: 100ms ease-in-out transform;
+}
+.right {
+    position: absolute;
+    right: 0;
+    width: 15px;
+    height: 15px;
+    background-color: #cc0000;
+    transform: skewY(-64deg) translate(5.5px, -6.5px);
+    transform-origin: bottom;
+    transition: 100ms ease-in-out transform;
+}
+
+button:active .top {
+    transform: rotateX(60deg) rotate(20deg) translateZ(-10px);
+}
+button:active .left {
+    transform: skewY(11deg) translate(-7px, -13.7px) scaleY(.45);
+}
+button:active .right {
+    transform: skewY(-64deg) translate(5.5px, -6.5px) scaleY(.5);
+}
